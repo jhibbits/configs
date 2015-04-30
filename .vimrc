@@ -17,15 +17,17 @@ set viminfo='20,\"50
 set suffixesadd=.e
 set number
 " vim: set ft=vim :
+set cursorline
+hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 syntax on
-set ts=3
-set sw=3
-set sta
-set sts=3
-set sr
-set si
-set et
-set ai
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set smarttab
+set softtabstop=2
+set shiftround
+set smartindent
+set autoindent
 set textwidth=0
 set wrapmargin=0
 set smartcase
