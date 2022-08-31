@@ -1,6 +1,7 @@
 version 6.0
 if &cp | set nocp | endif
 let s:cpo_save=&cpo
+set acd
 set cpo&vim
 nmap gx <Plug>NetrwBrowseX
 nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)
@@ -34,6 +35,9 @@ set smartcase
 set showcmd
 set splitright
 colors elflord
+set guifont=Monospace\ 16
+"colors torte
+set background=dark
 " Map esc to jk
 inoremap jk <esc>
 inoremap <esc> <nop>
@@ -50,16 +54,19 @@ set foldmethod=marker   " fold based on indent level
 nnoremap j gj
 nnoremap k gk
 
-" easily open ~/.vimrc
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-" easily source ~/.vimrc
-nnoremap <leader>sv :source $MYVIMRC<cr>
-
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
 " Remap leader from '\' to ','
 let mapleader = ","
 let g:mapleader = ","
+
+" easily open ~/.vimrc
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+" easily source ~/.vimrc
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" allow vim to jump between matching keywords with % as it does for parens/brackets
+runtime plugin/matchit.vim
 
 " ,w: open a new vertical split and switch over to it
 nnoremap <leader>w <C-w>v<C-w>l
