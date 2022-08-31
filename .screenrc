@@ -1,0 +1,18 @@
+term screen-256color-bce
+
+attrcolor b ".I"
+
+# make numpad work in screen
+termcapinfo screen* ks@: ke@
+
+# background color erase
+defbce "on"
+
+bind , prev
+bind . next
+hardstatus on
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{w}%+w%= %{g}][%{B} %m-%d %{W}%c %{g}]'
+
+# set scrollback buffer to 8k lines
+defscrollback 8192
